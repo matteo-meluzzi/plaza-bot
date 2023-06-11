@@ -21,6 +21,7 @@ async function makeRequest() {
         return response.data;
     } catch (error) {
         errorOccurred(error);
+        return null;
     }
 }
 
@@ -129,6 +130,9 @@ lastResponseStr = ""
 async function loop() {
     console.log("Checking Plaza website");
     const response = await makeRequest();
+    if (response === null) {
+        return;
+    }
     const responseStr = JSON.stringify(response);
     
     if (lastResponseStr != responseStr) {
