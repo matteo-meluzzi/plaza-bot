@@ -13,7 +13,7 @@ const bodyFilter = {"filters":{"$and":[{"$and":[{"municipality.id":{"$eq":"15741
 
 async function makeRequest() {
     try {
-        const response = await axios.post(url, bodyFilter, { timeout: 3000 });
+        const response = await axios.post(url, bodyFilter, { timeout: 5000 });
 
         if (response.status !== 200) {
             errorOccurred(`Received status code ${response.status}`);
@@ -23,6 +23,10 @@ async function makeRequest() {
     } catch (error) {
         if (error.code === 'ECONNABORTED') {
             console.log('Request timed out');
+            const observers = await selectObservers();
+            for (const chatId of observers) {
+                bot.sendMessage(chatId, "the request to plaza timed out");
+            }
         } else {
             errorOccurred(error);
         }
@@ -250,8 +254,6 @@ async function loop() { // called regularly at intervals of x seconds
     const ids = response.data.map(d => d.id);
 
     const alreadyRespondedIds = (await findAsync({}, dbResponses)).map(r => r.id);
-    console.log(ids);
-    console.log(alreadyRespondedIds);
     for (const i of ids) {
         if (!alreadyRespondedIds.includes(i)) {
             notifyObserversOfNewRoom();
@@ -262,10 +264,20 @@ async function loop() { // called regularly at intervals of x seconds
     console.log("no new room was published")
 }
 
-const interval = 4000;
-console.log(`Starting to poll plaza, once every ${interval/1000}s`)
-loop();
-setInterval(async () => {
-    loop();
-}, interval);
+function sleep(ms) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+}  
 
+async function main() {
+    const interval = 1000;
+    while (true) {
+        console.log(`Starting to poll plaza, with a delay of ${interval/1000}s`)
+    
+        loop();
+        await sleep(interval);
+    }    
+}
+
+main();
