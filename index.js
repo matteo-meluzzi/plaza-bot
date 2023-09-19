@@ -141,9 +141,10 @@ async function getPlazaNewNewNewSpace(headers) {
     }
 }
 
-async function postLoginConfiguration(headers) {
+async function postLoginConfiguration(httpClient, headers) {
     const url = "https://plaza.newnewnew.space:443/portal/account/frontend/getloginconfiguration/format/json";
-    const response = await axios.post(url, headers=headers);
+    const response = await httpClient.post(url, headers=headers);
+    const cookies = response.headers['set-cookie'];
     if (response.status != 200) {
         errorOccurred("could not post getloginconfiguration");
     }
@@ -151,10 +152,10 @@ async function postLoginConfiguration(headers) {
     return hash;
 }
 
-async function postLoginByService(headers, hash) {
+async function postLoginByService(httpClient, headers, hash) {
     const url = "https://plaza.newnewnew.space:443/portal/account/frontend/loginbyservice/format/json";
     const data = {"__id__": "Account_Form_LoginFrontend", "__hash__": hash, "username": "bmeluzzi", "password": "4Jx$KvXK"}
-    const response = await axios.post(url, data, headers=headers);
+    const response = await httpClient.post(url, data, headers=headers);
     if (response.status != 200) {
         errorOccurred("could not post loginbyservice")
     }
@@ -171,19 +172,18 @@ async function postListAvailableRooms(headers) {
     return houses;
 }
 
-async function respondToRoomSuccess(headers, add, id, key) {
+async function respondToRoomSuccess(httpClient, headers, add, id, key) {
     const urlSubmitOnly = "https://plaza.newnewnew.space:443/portal/core/frontend/getformsubmitonlyconfiguration/format/json";
-    const resSubmitOnly = await axios.get(urlSubmitOnly, headers=headers);
+    const resSubmitOnly = await httpClient.get(urlSubmitOnly, headers=headers);
     if (resSubmitOnly.status !== 200) {
         errorOccurred("could not get submit only url");
         return false;
     }
     const hash = resSubmitOnly.data.form.elements.__hash__.initialData;
-    sleep(1000);
     
     const url = "https://plaza.newnewnew.space:443/portal/object/frontend/react/format/json";
     const data = {"__id__": "Portal_Form_SubmitOnly", "__hash__": hash, "add": add, "dwellingID": id};
-    const res = await axios.post(url, querystring.stringify(data), headers=headers)
+    const res = await httpClient.post(url, querystring.stringify(data))
     if (res.staus !== 200) {
         errorOccurred(`could not react to ${id}, server responded with status code ${res.status}`)
         console.log(res)
@@ -219,27 +219,31 @@ async function respondToNewRooms() {
             continue;
         }
 
-        // if (street.toLowerCase() !== 'jan de oudeweg') {
-        //     for (const chatId of observers) {
-        //         bot.sendMessage(chatId, `the new room is in ${street}, so I will not respond to the offer`);
-        //     }
-        //     console.log(`the room is in ${street}, so I won't respond`)
+        if (street.toLowerCase() !== 'jan de oudeweg') {
+            for (const chatId of observers) {
+                bot.sendMessage(chatId, `the new room is in ${street}, so I will not respond to the offer`);
+            }
+            console.log(`the room is in ${street}, so I won't respond`)
 
-        //     dbResponses.insert({ name: key, id: id}, (err, newDoc) => {
-        //         if (err) {
-        //             errorOccurred(err);
-        //         } else {
-        //             console.log('Value inserted:', newDoc);
-        //         }
-        //     });                
-        // }
-        // else { // the room is in jan de oudeweg and it has not been responded to
-            const hash = await postLoginConfiguration(headers);
-            await postLoginByService(headers, hash);
-            sleep(1000);
+            dbResponses.insert({ name: key, id: id}, (err, newDoc) => {
+                if (err) {
+                    errorOccurred(err);
+                } else {
+                    console.log('Value inserted:', newDoc);
+                }
+            });                
+        }
+        else { // the room is in jan de oudeweg and it has not been responded to
+            const httpClient = axios.create({
+                withCredentials: true, // Enable cookies in the client
+            });
+            
+            const hash = await postLoginConfiguration(httpClient, headers);
+            await postLoginByService(httpClient, headers, hash);
+            await sleep(1000);
             let counter = 0;
             let failedToRespond = false;
-            while (!await respondToRoomSuccess(headers, add, id, key)) {
+            while (!await respondToRoomSuccess(httpClient, headers, add, id, key)) {
                 counter += 1;
                 sleep(3000); // wait 3s before retrying
                 if (counter == 10) { // try to respond 10 times (takes 10 * 3s = 30s)
@@ -252,7 +256,7 @@ async function respondToNewRooms() {
                     bot.sendMessage(chatId, `I responded to ${key}`);
                 }    
             }    
-        // }
+        }
     }
 }
 
@@ -272,8 +276,15 @@ async function loop() { // called regularly at intervals of x seconds
     for (const i of ids) {
         if (!alreadyRespondedIds.has(i)) {
             await notifyObserversOfNewRoom();
-            await respondToNewRooms();
-            return;
+            // await respondToNewRooms();
+            dbResponses.insert({ name: "room-not-actually-responded", id: i}, (err, newDoc) => {
+                if (err) {
+                    errorOccurred(err);
+                } else {
+                    console.log('Value inserted:', newDoc);
+                }
+            });    
+            // return;
         }
     }
     // console.log("no new room was published")
@@ -286,7 +297,7 @@ function sleep(ms) {
 }  
 
 async function main() {
-    const interval = 60000;
+    const interval = 30000;
     console.log(`Starting to poll plaza, with a delay of ${interval/1000}s`)
     while (true) {
         loop();
@@ -321,3 +332,15 @@ main();
 // const data = {"__id__": "Portal_Form_SubmitOnly", "__hash__": "9aa4a5daaf4b2819fd40cefdcb603f89", "add": 3884, "dwellingID": 5480};
 
 // console.log(querystring.stringify(data));
+
+// __Host-fe_typo_user=8d2fc9beca58e3e649d9d23f2e02085e; 
+// __cf_bm=4ebfI_OLaWr6Y7EpM8qBZDFAFsN81jZ.JhRRNEky2Pc-1695125541-0-AXKpD/tzJ49RmeYx8YU1El4pmfiNXebcIcNPZHsdSbD6NRbqC3Y0KHvLGyuu/4XFJPtOLZZAog3CD+THUdozg3g=; 
+// __Host-PHPSESSID=9a6ba8a5f857ba7966799a1a1f300b05; 
+// fe_typo_user=fc91fe54ca1dce7621c2bb011360b6cd; 
+// staticfilecache=typo_user_logged_in
+
+// __Host-fe_typo_user=8d2fc9beca58e3e649d9d23f2e02085e; 
+// __cf_bm=4ebfI_OLaWr6Y7EpM8qBZDFAFsN81jZ.JhRRNEky2Pc-1695125541-0-AXKpD/tzJ49RmeYx8YU1El4pmfiNXebcIcNPZHsdSbD6NRbqC3Y0KHvLGyuu/4XFJPtOLZZAog3CD+THUdozg3g=; 
+// __Host-PHPSESSID=cc39340a60a41a21520ba4dc2d5967f4; 
+// fe_typo_user=fc91fe54ca1dce7621c2bb011360b6cd
+// staticfilecache=typo_user_logged_in; 
