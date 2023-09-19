@@ -1,6 +1,7 @@
 const axios = require('axios');
+const querystring = require('querystring');
 const TelegramBot = require('node-telegram-bot-api');
-const token = ''
+const token = '5990199103:AAEDKO1TCDj0X5YpOx_gLTzl5SnDZ7GGgrw'
 const Datastore = require('nedb');
 let db = new Datastore({ filename: './db', autoload: true });
 let dbResponses = new Datastore({ filename: './dbResponses', autoload: true })
@@ -27,6 +28,7 @@ async function makeRequest() {
             for (const chatId of observers) {
                 bot.sendMessage(chatId, "the request to plaza timed out");
             }
+            await sleep(5000);
         } else {
             errorOccurred(error);
         }
@@ -169,19 +171,23 @@ async function postListAvailableRooms(headers) {
     return houses;
 }
 
-async function respondToRoom(headers, add, id, key) {
+async function respondToRoomSuccess(headers, add, id, key) {
     const urlSubmitOnly = "https://plaza.newnewnew.space:443/portal/core/frontend/getformsubmitonlyconfiguration/format/json";
     const resSubmitOnly = await axios.get(urlSubmitOnly, headers=headers);
     if (resSubmitOnly.status !== 200) {
         errorOccurred("could not get submit only url");
+        return false;
     }
     const hash = resSubmitOnly.data.form.elements.__hash__.initialData;
+    sleep(1000);
     
     const url = "https://plaza.newnewnew.space:443/portal/object/frontend/react/format/json";
     const data = {"__id__": "Portal_Form_SubmitOnly", "__hash__": hash, "add": add, "dwellingID": id};
-    const res = await axios.post(url, data, headers=headers)
+    const res = await axios.post(url, querystring.stringify(data), headers=headers)
     if (res.staus !== 200) {
-        errorOccurred(`could not react to ${id}`)
+        errorOccurred(`could not react to ${id}, server responded with status code ${res.status}`)
+        console.log(res)
+        return false;
     }
 
     dbResponses.insert({ name: key, id: id}, (err, newDoc) => {
@@ -191,13 +197,12 @@ async function respondToRoom(headers, add, id, key) {
             console.log('Value inserted:', newDoc);
         }
     });    
+    return true;
 }
 
 async function respondToNewRooms() {
     const headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/117.0", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", "DNT": "1", "Connection": "close", "Upgrade-Insecure-Requests": "1", "Sec-Fetch-Dest": "document", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Site": "none", "Sec-Fetch-User": "?1", "Sec-GPC": "1"};
     await getPlazaNewNewNewSpace(headers);
-    const hash = await postLoginConfiguration(headers);
-    await postLoginByService(headers, hash);
     const houses = await postListAvailableRooms(headers);
     const housesInDelft = houses.filter(h => h.gemeenteGeoLocatieNaam == "Delft");
 
@@ -208,36 +213,46 @@ async function respondToNewRooms() {
         const id = house.id;
         const add = house.toewijzingID;
         const street = house.street;
-        if (street.toLowerCase() !== 'jan de oudeweg') {
-            const alreadyResponded = await findOneAsync({ name: key }, dbResponses);
-            if (!alreadyResponded) {
-                dbResponses.insert({ name: key, id: id}, (err, newDoc) => {
-                    if (err) {
-                        errorOccurred(err);
-                    } else {
-                        console.log('Value inserted:', newDoc);
-                    }
-                });                
-            }
-            for (const chatId of observers) {
-                bot.sendMessage(chatId, `the new room is in ${street}, so I will not respond to the offer`);
-            }
-            console.log(`the room is in ${street}, so I won't respond`)
+
+        const alreadyResponded = await findOneAsync({ name: key }, dbResponses);
+        if (alreadyResponded) {
             continue;
         }
 
-        const alreadyResponded = await findOneAsync({ name: key }, dbResponses);
-        if (!alreadyResponded) {
-            respondToRoom(headers, add, id, key);
-            for (const chatId of observers) {
-                bot.sendMessage(chatId, `I responded to ${key}`);
+        // if (street.toLowerCase() !== 'jan de oudeweg') {
+        //     for (const chatId of observers) {
+        //         bot.sendMessage(chatId, `the new room is in ${street}, so I will not respond to the offer`);
+        //     }
+        //     console.log(`the room is in ${street}, so I won't respond`)
+
+        //     dbResponses.insert({ name: key, id: id}, (err, newDoc) => {
+        //         if (err) {
+        //             errorOccurred(err);
+        //         } else {
+        //             console.log('Value inserted:', newDoc);
+        //         }
+        //     });                
+        // }
+        // else { // the room is in jan de oudeweg and it has not been responded to
+            const hash = await postLoginConfiguration(headers);
+            await postLoginByService(headers, hash);
+            sleep(1000);
+            let counter = 0;
+            let failedToRespond = false;
+            while (!await respondToRoomSuccess(headers, add, id, key)) {
+                counter += 1;
+                sleep(3000); // wait 3s before retrying
+                if (counter == 10) { // try to respond 10 times (takes 10 * 3s = 30s)
+                    failedToRespond = true;
+                    break;
+                }
             }
-        } else {
-            console.log(`room ${key} has already been responded to`);
-            for (const chatId of observers) {
-                bot.sendMessage(chatId, `I have already responded to room ${key}`);
-            }
-        }
+            if (!failedToRespond) {
+                for (const chatId of observers) {
+                    bot.sendMessage(chatId, `I responded to ${key}`);
+                }    
+            }    
+        // }
     }
 }
 
@@ -246,22 +261,22 @@ bot.on('polling_error', (error) => {
 });
 
 async function loop() { // called regularly at intervals of x seconds
-    console.log("Checking Plaza website");
+    // console.log("Checking Plaza website");
     const response = await makeRequest();
     if (response === null) {
         return;
     }
     const ids = response.data.map(d => d.id);
 
-    const alreadyRespondedIds = (await findAsync({}, dbResponses)).map(r => r.id);
+    const alreadyRespondedIds = new Set((await findAsync({}, dbResponses)).map(r => r.id));
     for (const i of ids) {
-        if (!alreadyRespondedIds.includes(i)) {
-            notifyObserversOfNewRoom();
-            respondToNewRooms();
+        if (!alreadyRespondedIds.has(i)) {
+            await notifyObserversOfNewRoom();
+            await respondToNewRooms();
             return;
         }
     }
-    console.log("no new room was published")
+    // console.log("no new room was published")
 }
 
 function sleep(ms) {
@@ -271,13 +286,38 @@ function sleep(ms) {
 }  
 
 async function main() {
-    const interval = 1000;
+    const interval = 60000;
+    console.log(`Starting to poll plaza, with a delay of ${interval/1000}s`)
     while (true) {
-        console.log(`Starting to poll plaza, with a delay of ${interval/1000}s`)
-    
         loop();
         await sleep(interval);
     }    
 }
 
 main();
+  
+// fetch("https://plaza.newnewnew.space/portal/object/frontend/react/format/json", {
+//   "headers": {
+//     "accept": "application/json, text/plain, */*",
+//     "accept-language": "en,it-IT;q=0.9,it;q=0.8,en-US;q=0.7",
+//     "cache-control": "no-cache",
+//     "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+//     "pragma": "no-cache",
+//     "sec-ch-ua": "\"Google Chrome\";v=\"117\", \"Not;A=Brand\";v=\"8\", \"Chromium\";v=\"117\"",
+//     "sec-ch-ua-mobile": "?0",
+//     "sec-ch-ua-platform": "\"macOS\"",
+//     "sec-fetch-dest": "empty",
+//     "sec-fetch-mode": "cors",
+//     "sec-fetch-site": "same-origin",
+//     "x-requested-with": "XMLHttpRequest",
+//     "cookie": "__Host-fe_typo_user=8d2fc9beca58e3e649d9d23f2e02085e; __cf_bm=FRiOqaafjRWKTm12rPQCV9C8IWaTfNY7I9U_5pKMQRA-1695116905-0-AQpenT6fdvD9TsN7DfZwCuI7zfiZ4VyJRMP8t6lSQ2a0E8bOpuZ2+IRNIcriYrIzjuzJbeHEbbg+YmtU0pnT1m0=; __Host-PHPSESSID=9a6ba8a5f857ba7966799a1a1f300b05; fe_typo_user=a43e653bfdda08264b569c1ca18dcc43; staticfilecache=typo_user_logged_in",
+//     "Referer": "https://plaza.newnewnew.space/aanbod/huurwoningen/details/5480-vanembdenstraat-408-delft",
+//     "Referrer-Policy": "no-referrer-when-downgrade"
+//   },
+//   "body": "__id__=Portal_Form_SubmitOnly&__hash__=9aa4a5daaf4b2819fd40cefdcb603f89&add=3884&dwellingID=5480",
+//   "method": "POST"
+// });
+
+// const data = {"__id__": "Portal_Form_SubmitOnly", "__hash__": "9aa4a5daaf4b2819fd40cefdcb603f89", "add": 3884, "dwellingID": 5480};
+
+// console.log(querystring.stringify(data));
