@@ -1,0 +1,1 @@
+nodemon index.js | tee -a plaza-bot-output.txt

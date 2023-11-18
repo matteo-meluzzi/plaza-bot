@@ -1,0 +1,1267 @@
+[33m[nodemon] 3.0.1[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node index.js`[39m
+Starting to poll plaza, with a delay of 60s
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5502
+Error executing python script: Command failed: python3 bot.py 5502
+  File "/home/matteo/plaza-bot/bot.py", line 56
+    if house["street"].lower() != "jan de oudeweg":
+TabError: inconsistent use of tabs and spaces in indentation
+
+Exit code: 1
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5502
+Error executing python script: Command failed: python3 bot.py 5502
+  File "/home/matteo/plaza-bot/bot.py", line 56
+    if house["street"].lower() != "jan de oudeweg":
+TabError: inconsistent use of tabs and spaces in indentation
+
+Exit code: 1
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5502
+Error executing python script: Command failed: python3 bot.py 5502
+  File "/home/matteo/plaza-bot/bot.py", line 56
+    if house["street"].lower() != "jan de oudeweg":
+TabError: inconsistent use of tabs and spaces in indentation
+
+Exit code: 1
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+Starting to poll plaza, with a delay of 60s
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5502
+python output: house found 5432-vanembdenstraat-200-delft
+['5502']
+5432
+house found 5489-vanembdenstraat-624-delft
+['5502']
+5489
+house found 5480-vanembdenstraat-408-delft
+['5502']
+5480
+house found 5502-jandeoudeweg-260-delft
+['5502']
+5502
+responded to  5502-jandeoudeweg-260-delft
+
+Value inserted: { id: 5502, _id: 'L401dU1vwOIDosd4' }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+Starting to poll plaza, with a delay of 10s
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5512
+python output: house found 5432-vanembdenstraat-200-delft
+['5512']
+5432
+house found 5489-vanembdenstraat-624-delft
+['5512']
+5489
+house found 5512-vanembdenstraat-594-delft
+['5512']
+5512
+the house is in Van Embdenstraat so I dont respond
+house found 5480-vanembdenstraat-408-delft
+['5512']
+5480
+house found 5502-jandeoudeweg-260-delft
+['5512']
+5502
+
+Value inserted: { id: 5512, _id: 'VeZFx4AWAxJg4Y1K' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: ETELEGRAM: 504 Gateway Timeout
+Polling error: Error: ETELEGRAM: 504 Gateway Timeout
+Polling error: Error: EFATAL: Error: connect ETIMEDOUT 149.154.167.220:443
+Polling error: Error: EFATAL: Error: socket hang up
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5526
+python output: house found 5512-vanembdenstraat-594-delft
+['5526']
+5512
+house found 5526-vanembdenstraat-362-delft
+['5526']
+5526
+the house is in Van Embdenstraat so I dont respond
+house found 5502-jandeoudeweg-260-delft
+['5526']
+5502
+
+Value inserted: { id: 5526, _id: 'U6rEIuswwK6FqGFp' }
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5527
+python output: house found 5512-vanembdenstraat-594-delft
+['5527']
+5512
+house found 5526-vanembdenstraat-362-delft
+['5527']
+5526
+house found 5527-vanembdenstraat-490-delft
+['5527']
+5527
+the house is in Van Embdenstraat so I dont respond
+house found 5502-jandeoudeweg-260-delft
+['5527']
+5502
+
+Value inserted: { id: 5527, _id: '067AmM7s1hgBMKBO' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5538
+python output: house found 5526-vanembdenstraat-362-delft
+['5538']
+5526
+house found 5538-jandeoudeweg-180-delft
+['5538']
+5538
+responded to  5538-jandeoudeweg-180-delft
+
+Value inserted: { id: 5538, _id: 'xtXkrjYtxmbtoTax' }
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5540
+python output: house found 5526-vanembdenstraat-362-delft
+['5540']
+5526
+house found 5538-jandeoudeweg-180-delft
+['5540']
+5538
+
+Value inserted: { id: 5540, _id: 'rnYLqMb8PWrSARRO' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5563
+python output: house found 5563-vanembdenstraat-468-delft
+['5563']
+5563
+the house is in Van Embdenstraat so I dont respond
+house found 5538-jandeoudeweg-180-delft
+['5563']
+5538
+
+Value inserted: { id: 5563, _id: 'HgzP1GLgzZC7P7DH' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: EFATAL: Error: read ETIMEDOUT
+Request timed out
+Polling error: Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+Request timed out
+Request timed out
+Polling error: Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: EFATAL: Error: getaddrinfo EAI_AGAIN api.telegram.org
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: EFATAL: Error: read ETIMEDOUT
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5569
+python output: house found 5563-vanembdenstraat-468-delft
+['5569']
+5563
+house found 5569-vanembdenstraat-340-delft
+['5569']
+5569
+the house is in Van Embdenstraat so I dont respond
+
+Value inserted: { id: 5569, _id: 'TTZiEn0XcHIkzNGC' }
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5571
+python output: house found 5563-vanembdenstraat-468-delft
+['5571']
+5563
+house found 5569-vanembdenstraat-340-delft
+['5571']
+5569
+house found 5571-jandeoudeweg-446-delft
+['5571']
+5571
+responded to  5571-jandeoudeweg-446-delft
+
+Value inserted: { id: 5571, _id: '7J4YqcmoKEl01zHS' }
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5574
+python output: house found 5563-vanembdenstraat-468-delft
+['5574']
+5563
+house found 5574-vanembdenstraat-206-delft
+['5574']
+5574
+the house is in Van Embdenstraat so I dont respond
+house found 5569-vanembdenstraat-340-delft
+['5574']
+5569
+house found 5571-jandeoudeweg-446-delft
+['5574']
+5571
+
+Value inserted: { id: 5574, _id: 'qPOeGh7EMN6UyhPW' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5586
+python output: house found 5586-stieltjesweg-30-delft
+['5586']
+5586
+the house is in Stieltjesweg so I dont respond
+house found 5569-vanembdenstraat-340-delft
+['5586']
+5569
+house found 5571-jandeoudeweg-446-delft
+['5586']
+5571
+
+Value inserted: { id: 5586, _id: 'OchhBIsWU8XnfyUX' }
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5587
+python output: house found 5586-stieltjesweg-30-delft
+['5587']
+5586
+house found 5569-vanembdenstraat-340-delft
+['5587']
+5569
+house found 5571-jandeoudeweg-446-delft
+['5587']
+5571
+house found 5587-jandeoudeweg-304-delft
+['5587']
+5587
+responded to  5587-jandeoudeweg-304-delft
+
+Value inserted: { id: 5587, _id: 'V80u3NzCgI1OvEPr' }
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5588
+python output: house found 5586-stieltjesweg-30-delft
+['5588']
+5586
+house found 5569-vanembdenstraat-340-delft
+['5588']
+5569
+house found 5571-jandeoudeweg-446-delft
+['5588']
+5571
+house found 5588-jandeoudeweg-352-delft
+['5588']
+5588
+responded to  5588-jandeoudeweg-352-delft
+house found 5587-jandeoudeweg-304-delft
+['5588']
+5587
+
+Value inserted: { id: 5588, _id: 'giCx1BJBS8fTVdKF' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5590
+python output: house found 5586-stieltjesweg-30-delft
+['5590']
+5586
+house found 5569-vanembdenstraat-340-delft
+['5590']
+5569
+house found 5571-jandeoudeweg-446-delft
+['5590']
+5571
+house found 5588-jandeoudeweg-352-delft
+['5590']
+5588
+house found 5590-jandeoudeweg-384-delft
+['5590']
+5590
+responded to  5590-jandeoudeweg-384-delft
+house found 5587-jandeoudeweg-304-delft
+['5590']
+5587
+
+Value inserted: { id: 5590, _id: 'HB0d5xHBR4G77oOB' }
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5602
+Error executing python script: Command failed: python3 bot.py 5602
+
+Exit code: 1
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5602
+python output: house found 5586-stieltjesweg-30-delft
+['5602']
+5586
+house found 5602-vanembdenstraat-668-delft
+['5602']
+5602
+the house is in Van Embdenstraat so I dont respond
+house found 5569-vanembdenstraat-340-delft
+['5602']
+5569
+house found 5571-jandeoudeweg-446-delft
+['5602']
+5571
+house found 5588-jandeoudeweg-352-delft
+['5602']
+5588
+house found 5590-jandeoudeweg-384-delft
+['5602']
+5590
+house found 5587-jandeoudeweg-304-delft
+['5602']
+5587
+
+Value inserted: { id: 5602, _id: 'zPgegkVYhl4YEfz1' }
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5616
+python output: house found 5586-stieltjesweg-30-delft
+['5616']
+5586
+house found 5602-vanembdenstraat-668-delft
+['5616']
+5602
+house found 5616-vanembdenstraat-502-delft
+['5616']
+5616
+the house is in Van Embdenstraat so I dont respond
+house found 5569-vanembdenstraat-340-delft
+['5616']
+5569
+house found 5571-jandeoudeweg-446-delft
+['5616']
+5571
+house found 5588-jandeoudeweg-352-delft
+['5616']
+5588
+house found 5590-jandeoudeweg-384-delft
+['5616']
+5590
+house found 5587-jandeoudeweg-304-delft
+['5616']
+5587
+
+Value inserted: { id: 5616, _id: 'mUYMhC5EqAGZoy01' }
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5618
+python output: house found 5586-stieltjesweg-30-delft
+['5618']
+5586
+house found 5602-vanembdenstraat-668-delft
+['5618']
+5602
+house found 5616-vanembdenstraat-502-delft
+['5618']
+5616
+house found 5569-vanembdenstraat-340-delft
+['5618']
+5569
+house found 5571-jandeoudeweg-446-delft
+['5618']
+5571
+house found 5588-jandeoudeweg-352-delft
+['5618']
+5588
+house found 5590-jandeoudeweg-384-delft
+['5618']
+5590
+house found 5618-jandeoudeweg-618-delft
+['5618']
+5618
+responded to  5618-jandeoudeweg-618-delft
+house found 5587-jandeoudeweg-304-delft
+['5618']
+5587
+
+Value inserted: { id: 5618, _id: 'IhCKi5PfhXFlVHFA' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5620
+python output: house found 5586-stieltjesweg-30-delft
+['5620']
+5586
+house found 5616-vanembdenstraat-502-delft
+['5620']
+5616
+house found 5620-jandeoudeweg-446-delft
+['5620']
+5620
+responded to  5620-jandeoudeweg-446-delft
+house found 5618-jandeoudeweg-618-delft
+['5620']
+5618
+house found 5587-jandeoudeweg-304-delft
+['5620']
+5587
+
+Value inserted: { id: 5620, _id: 'dAUji7HhRwksrm3d' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5628
+python output: house found 5586-stieltjesweg-30-delft
+['5628']
+5586
+house found 5628-vanembdenstraat-262-delft
+['5628']
+5628
+the house is in Van Embdenstraat so I dont respond
+house found 5618-jandeoudeweg-618-delft
+['5628']
+5618
+
+Value inserted: { id: 5628, _id: 'InoiIzIn7JXjVMTO' }
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5630
+python output: house found 5586-stieltjesweg-30-delft
+['5630']
+5586
+house found 5630-vanembdenstraat-574-delft
+['5630']
+5630
+the house is in Van Embdenstraat so I dont respond
+house found 5628-vanembdenstraat-262-delft
+['5630']
+5628
+house found 5618-jandeoudeweg-618-delft
+['5630']
+5618
+
+Value inserted: { id: 5630, _id: 'J8YJwQScJy5C4X4c' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5635
+python output: house found 5586-stieltjesweg-30-delft
+['5635']
+5586
+house found 5630-vanembdenstraat-574-delft
+['5635']
+5630
+house found 5628-vanembdenstraat-262-delft
+['5635']
+5628
+house found 5635-jandeoudeweg-242-delft
+['5635']
+5635
+responded to  5635-jandeoudeweg-242-delft
+
+Value inserted: { id: 5635, _id: 'vguFmXkMtJWC7zSz' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5682
+python output: house found 5682-jandeoudeweg-96-delft
+['5682']
+5682
+responded to  5682-jandeoudeweg-96-delft
+
+Value inserted: { id: 5682, _id: 'eBuau4QydzY4EVFI' }
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5688
+python output: house found 5688-jandeoudeweg-182-delft
+['5688']
+5688
+responded to  5688-jandeoudeweg-182-delft
+house found 5682-jandeoudeweg-96-delft
+['5688']
+5682
+
+Value inserted: { id: 5688, _id: 'UT9YMOdNKZzp61ZZ' }
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5690
+python output: house found 5690-vanembdenstraat-534-delft
+['5690']
+5690
+the house is in Van Embdenstraat so I dont respond
+house found 5682-jandeoudeweg-96-delft
+['5690']
+5682
+
+Value inserted: { id: 5690, _id: 'bZVWvGMBiISrxDsT' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Request timed out
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 429 Too Many Requests: retry after 5
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+Polling error: Error: ETELEGRAM: 502 Bad Gateway
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5692
+python output: house found 5690-vanembdenstraat-534-delft
+['5692']
+5690
+house found 5692-jandeoudeweg-528-delft
+['5692']
+5692
+responded to  5692-jandeoudeweg-528-delft
+house found 5682-jandeoudeweg-96-delft
+['5692']
+5682
+
+Value inserted: { id: 5692, _id: 'XAgUmhhQRH1z095B' }
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+Request timed out
+response was different!
+Notifying observers:  [ 5027985438, 180287215 ]
+Responding to the offers if there are new ones
+calling python with ids 5720
+python output: house found 5690-vanembdenstraat-534-delft
+['5720']
+5690
+house found 5682-jandeoudeweg-96-delft
+['5720']
+5682
+house found 5720-jandeoudeweg-78-delft
+['5720']
+5720
+responded to  5720-jandeoudeweg-78-delft
+
+Value inserted: { id: 5720, _id: '4wbiL4KPsKzjru9f' }
+Request timed out
+Request timed out
+Request timed out
